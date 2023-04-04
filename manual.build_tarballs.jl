@@ -13,9 +13,7 @@ sources = [
 
 # Bash recipe for building across all platforms
 script = raw"""
-cd $WORKSPACE/srcdir/CxxCalc.jl/cxxcalc
-ls
-exit
+cd $WORKSPACE/srcdir/cxxcalc
 if [[ "${target}" == x86_64-linux-musl ]]; then
     # Remove libexpat to avoid it being picked up by mistake
     rm /usr/lib/libexpat.so*
@@ -44,6 +42,7 @@ products = [
 
 # Dependencies that must be installed before this package can be built
 dependencies = [
+    Dependency("libcxxwrap_julia_jll")
 ]
 
 # Build the tarballs, and possibly a `build.jl` as well.
