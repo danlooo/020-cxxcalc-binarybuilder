@@ -1,0 +1,7 @@
+module_name         = "CxxCalc"
+
+input               = [ "CxxCalc.cpp" ] 
+
+include_dirs        = [ "." ]
+
+cxx-std             = "c++17"
