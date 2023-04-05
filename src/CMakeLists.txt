@@ -13,7 +13,7 @@ message(STATUS "Found JlCxx at ${JlCxx_location}")
 
 add_library(jlCxxCalc SHARED jlCxxCalc.cxx)
 
-target_link_libraries(testlib JlCxx::cxxwrap_julia)
+target_link_libraries(jlCxxCalc JlCxx::cxxwrap_julia)
 
 install(TARGETS
     jlCxxCalc
