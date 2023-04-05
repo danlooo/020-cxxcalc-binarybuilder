@@ -8,7 +8,7 @@ version = v"0.1.0"
 
 # Collection of sources required to complete build
 sources = [
-    GitSource("https://github.com/danlooo/CxxCalc.jl.git", "7297bd1cc66561e7c93fb34364621253924c5b23")
+    GitSource("https://github.com/danlooo/020-cxxcalc-binarybuilder.git", "b61706d9fd9ee2e5fc68a875b9cf423189a46cef")
 ]
 
 # Bash recipe for building across all platforms
