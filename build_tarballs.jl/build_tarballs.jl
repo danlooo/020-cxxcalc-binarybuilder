@@ -23,9 +23,11 @@ cp lib/* $libdir
 # These are the platforms we will build for by default, unless further
 # platforms are passed in on the command line
 platforms = [
-    Platform("x86_64", "linux"; libc="glibc")
+    Platform("x86_64", "macos"),
+    Platform("aarch64", "macos"),
+    Platform("x86_64", "linux"; libc="glibc"),
+    Platform("aarch64", "linux"; libc="glibc"),
     # Platform("x86_64", "windows")
-    #Platform("aarch64", "linux"; libc="glibc")
 ]
 
 # Fix incompatibilities across GCC 4/5, because of std::string
