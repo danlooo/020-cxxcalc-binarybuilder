@@ -1,4 +1,4 @@
-project(CxxCalc)
+project(jlCxxCalc)
 
 cmake_minimum_required(VERSION 2.8.12)
 set(CMAKE_MACOSX_RPATH 1)
@@ -11,15 +11,12 @@ set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib;${JlCxx_location}")
 
 message(STATUS "Found JlCxx at ${JlCxx_location}")
 
-# pure c++ library
-add_library(CxxCalc SHARED CxxCalc.cpp)
-
-# c++ library with julia bindings
 add_library(jlCxxCalc SHARED jlCxxCalc.cxx)
-target_link_libraries(jlCxxCalc JlCxx::cxxwrap_julia)
 
-install(TARGETS CxxCalc jlCxxCalc
+target_link_libraries(testlib JlCxx::cxxwrap_julia)
+
+install(TARGETS
+    jlCxxCalc
 LIBRARY DESTINATION lib
 ARCHIVE DESTINATION lib
-RUNTIME DESTINATION lib
-)
+RUNTIME DESTINATION lib)
