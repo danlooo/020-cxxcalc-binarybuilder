@@ -12,7 +12,8 @@ set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib;${JlCxx_location}")
 message(STATUS "Found JlCxx at ${JlCxx_location}")
 
 add_library(jlCxxCalc SHARED jlCxxCalc.cxx)
-
+# required by BinaryBuilder
+target_include_directories(jlCxxCalc PRIVATE /workspace/destdir/include/julia)
 target_link_libraries(jlCxxCalc JlCxx::cxxwrap_julia)
 
 install(TARGETS
